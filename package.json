@@ -1,0 +1,7 @@
+{
+  "name": "pixel-rebels",
+  "private": true,
+  "scripts": {
+    "check:seo": "node scripts/seo-check.mjs"
+  }
+}

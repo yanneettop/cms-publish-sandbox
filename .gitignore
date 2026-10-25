@@ -1,0 +1,13 @@
+node_modules/
+assets/_unused/
+*.zip
+nul
+__pycache__/
+.DS_Store
+.wrangler/
+.claude/
+.vscode/
+*.py
+_new_about_sections.js
+_test_about.js
+_sections_map.json

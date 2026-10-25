@@ -1,0 +1,37 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ictinusGold" x1="160" y1="80" x2="680" y2="770" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6C58E"/>
+      <stop offset="0.5" stop-color="#CDA66C"/>
+      <stop offset="1" stop-color="#9E7440"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="url(#ictinusGold)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M196 322C240 256 305 220 386 208" stroke-width="3.5" opacity="0.92"/>
+    <path d="M704 322C660 256 595 220 514 208" stroke-width="3.5" opacity="0.92"/>
+
+    <path d="M338 146H562" stroke-width="6"/>
+    <path d="M354 146C352 132 339 120 322 120C302 120 286 136 286 156C286 176 302 192 322 192C338 192 350 183 354 170" stroke-width="6"/>
+    <path d="M546 146C548 132 561 120 578 120C598 120 614 136 614 156C614 176 598 192 578 192C562 192 550 183 546 170" stroke-width="6"/>
+    <path d="M290 154C312 152 326 162 326 180C326 198 313 210 296 210" stroke-width="4.5" opacity="0.95"/>
+    <path d="M610 154C588 152 574 162 574 180C574 198 587 210 604 210" stroke-width="4.5" opacity="0.95"/>
+
+    <path d="M360 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M385 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M410 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M435 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M460 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M485 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M510 170V620" stroke-width="4" opacity="0.94"/>
+    <path d="M535 170V620" stroke-width="4" opacity="0.94"/>
+
+    <path d="M338 620H562" stroke-width="5"/>
+    <path d="M324 640H576" stroke-width="5"/>
+    <path d="M306 662H594" stroke-width="5"/>
+    <path d="M284 686H616V714H284V686Z" stroke-width="5"/>
+  </g>
+
+  <text x="450" y="790" text-anchor="middle" fill="url(#ictinusGold)" font-family="Georgia, 'Times New Roman', serif" font-size="74" letter-spacing="2">ICTINUS</text>
+  <text x="450" y="864" text-anchor="middle" fill="url(#ictinusGold)" font-family="Georgia, 'Times New Roman', serif" font-size="92" letter-spacing="1.8">CONTRACTORS</text>
+</svg>

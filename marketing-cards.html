@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7DLDTVN0RF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7DLDTVN0RF');
+</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel Rebels — Marketing Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #FF4D4D;
+    --red-dark: #cc2e2e;
+    --red-dim: rgba(255,77,77,0.12);
+    --red-border: rgba(255,77,77,0.25);
+    --bg: #080808;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --white: #ffffff;
+    --gray: #9ca3af;
+    --gray-dim: #374151;
+    --green: #10b981;
+    --purple: #8b5cf6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d0d0d;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+  }
+
+  /* ─── PAGE CHROME ─── */
+  .page-header {
+    padding: 48px 60px 32px;
+    border-bottom: 1px solid #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .page-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .page-header h1 span { color: var(--red); }
+  .page-header p {
+    font-size: 13px;
+    color: var(--gray);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .gallery {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+    gap: 40px;
+  }
+
+  /* ─── CARD WRAPPER ─── */
+  .card-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--red);
+  }
+  .card-size {
+    font-size: 10px;
+    color: var(--gray-dim);
+    margin-left: auto;
+    letter-spacing: 1px;
+  }
+
+  /* ─── BASE CARD ─── */
+  .card {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,77,77,0.2); }
+  .card-wide { aspect-ratio: 16 / 9; }
+
+  /* ─── NOISE OVERLAY ─── */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: overlay;
+    opacity: 0.5;
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 1 — HERO BRAND
+  ══════════════════════════════════════════ */
+  .card-hero {
+    background: #080808;
+  }
+  .card-hero .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,77,77,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,77,77,0.06) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
+  .card-hero .glow-orb {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,77,77,0.18) 0%, transparent 70%);
+    top: -200px;
+    right: -150px;
+    pointer-events: none;
+  }
+  .card-hero .glow-orb2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,77,77,0.08) 0%, transparent 70%);
+    bottom: -100px;
+    left: -80px;
+    pointer-events: none;
+  }
+  .card-hero .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 56px;
+    z-index: 2;
+  }
+  .card-hero .brand-mark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    width: 36px;
+    margin-bottom: 40px;
+  }
+  .card-hero .brand-mark span {
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 3px;
+  }
+  .card-hero .brand-mark span:nth-child(1) { background: var(--red); }
+  .card-hero .brand-mark span:nth-child(2) { background: var(--red); opacity: 0.55; }
+  .card-hero .brand-mark span:nth-child(3) { background: var(--red); opacity: 0.55; }
+  .card-hero .brand-mark span:nth-child(4) { background: var(--red); opacity: 0.25; }
+
+  .card-hero .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 8vw, 80px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    color: var(--white);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-hero .headline em {
+    font-style: normal;
+    color: var(--red);
+    display: block;
+  }
+  .card-hero .sub {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+    max-width: 340px;
+    margin-bottom: 32px;
+  }
+  .card-hero .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 24px;
+  }
+  .card-hero .domain {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    letter-spacing: 1px;
+  }
+  .card-hero .cta-pill {
+    background: var(--red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .card-hero .side-tag {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center center;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.12);
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 2 — LAUNCH OFFER
+  ══════════════════════════════════════════ */
+  .card-offer {
+    background: var(--red);
+  }
+  .card-offer .noise-red {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0,0,0,0.03) 3px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  .card-offer .big-num {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 380px;
+    line-height: 1;
+    color: rgba(0,0,0,0.08);
+    bottom: -60px;
+    right: -20px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .card-offer .content {
+    position: relative;
+    z-index: 2;
+    padding: 56px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-offer .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,0,0,0.15);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    width: fit-content;
+    margin-bottom: 36px;
+  }
+  .card-offer .tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.7); }
+  }
+  .card-offer .offer-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 72px);
+    line-height: 0.95;
+    color: #fff;
+    letter-spacing: 2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-offer .offer-headline .num {
+    font-size: clamp(100px, 14vw, 150px);
+    line-height: 0.85;
+    display: block;
+  }
+  .card-offer .perks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .card-offer .perk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+  .card-offer .perk::before {
+    content: '✓';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    line-height: 20px;
+    text-align: center;
+  }
+  .card-offer .footer {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-offer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+  }
+  .card-offer .footer-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 1px;
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 3 — PRICING TIERS
+  ══════════════════════════════════════════ */
+  .card-quotes {
+    background: #0c0c0c;
+    border: 1px solid #1e1e1e;
+  }
+  .card-quotes .content {
+    position: relative;
+    z-index: 2;
+    padding: 48px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-quotes .heading {
+    margin-bottom: 32px;
+  }
+  .card-quotes .heading .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .card-quotes .heading h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 44px;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .card-quotes .tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  .card-quotes .tier {
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .card-quotes .tier.featured {
+    border-color: var(--red-border);
+    background: var(--red-dim);
+  }
+  .card-quotes .tier-badge {
+    position: absolute;
+    top: -10px;
+    left: 22px;
+    background: var(--red);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .card-quotes .tier-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .card-quotes .tier-info {
+    flex: 1;
+  }
+  .card-quotes .tier-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .card-quotes .tier-desc {
+    font-size: 11px;
+    color: var(--gray);
+  }
+  .card-quotes .tier-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+  }
+  .card-quotes .tier-price small {
+    font-size: 14px;
+    color: var(--gray);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+  }
+  .card-quotes .footer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-quotes .footer-text {
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .card-quotes .footer-text strong { color: var(--white); }
+  .card-quotes .footer-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gray-dim);
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 4 — TESTIMONIAL
+  ══════════════════════════════════════════ */
+  .card-testimonial {
+    background: #0a0a0a;
+  }
+  .card-testimonial .stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), #ff8c00);
+  }
+  .card-testimonial .big-quote {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 320px;
+    line-height: 1;
+    color: rgba(255,77,77,0.04);
+    top: -30px;
+    left: 30px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .card-testimonial .content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 56px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-testimonial .stars {
+    color: var(--red);
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+  }
+  .card-testimonial .quote-text {
+    font-size: clamp(18px, 2.8vw, 22px);
+    line-height: 1.55;
+    color: var(--white);
+    font-weight: 500;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .card-testimonial .author-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .card-testimonial .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), #ff8c00);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .card-testimonial .author-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .card-testimonial .author-role {
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .card-testimonial .brand-footer {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-testimonial .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--gray);
+  }
+  .card-testimonial .brand-name span { color: var(--red); }
+  .card-testimonial .brand-url {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gray-dim);
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 5 — SERVICES
+  ══════════════════════════════════════════ */
+  .card-services {
+    background: #090909;
+  }
+  .card-services .bg-text {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    line-height: 1;
+    color: rgba(255,255,255,0.015);
+    bottom: -20px;
+    left: -10px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .card-services .content {
+    position: relative;
+    z-index: 2;
+    padding: 52px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-services .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 44px;
+  }
+  .card-services .title-block h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    letter-spacing: 2px;
+    line-height: 0.95;
+    margin-bottom: 10px;
+  }
+  .card-services .title-block h2 span { color: var(--red); }
+  .card-services .title-block p {
+    font-size: 13px;
+    color: var(--gray);
+    max-width: 240px;
+    line-height: 1.5;
+  }
+  .card-services .feature-count {
+    text-align: right;
+  }
+  .card-services .feature-count .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--red);
+  }
+  .card-services .feature-count .label {
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .card-services .service-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-content: start;
+  }
+  .card-services .service-item {
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color 0.2s;
+  }
+  .card-services .service-item:hover { border-color: var(--red-border); }
+  .card-services .service-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--red-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .card-services .service-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.3;
+  }
+  .card-services .service-desc {
+    font-size: 11px;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+  .card-services .footer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ══════════════════════════════════════════
+     CARD 6 — PROCESS (WIDE)
+  ══════════════════════════════════════════ */
+  .card-process {
+    background: #0b0b0b;
+    border: 1px solid #1a1a1a;
+  }
+  .card-process .content {
+    position: relative;
+    z-index: 2;
+    padding: 44px 52px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-process .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  .card-process .header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .card-process .header h2 span { color: var(--red); }
+  .card-process .header .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--gray);
+  }
+  .card-process .steps {
+    display: flex;
+    gap: 0;
+    flex: 1;
+    align-items: center;
+  }
+  .card-process .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .card-process .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 28px;
+    width: calc(50% - 28px);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,77,77,0.3), rgba(255,77,77,0.05));
+  }
+  .card-process .step:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 28px;
+    width: calc(50% - 28px);
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,77,77,0.05), rgba(255,77,77,0.3));
+  }
+  .card-process .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--red-border);
+    background: var(--red-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--red);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .card-process .step-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .card-process .step-desc {
+    font-size: 11px;
+    color: var(--gray);
+    line-height: 1.5;
+    max-width: 130px;
+  }
+  .card-process .footer {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-process .footer-cta {
+    font-size: 12px;
+    color: var(--gray);
+  }
+  .card-process .footer-cta strong { color: var(--red); }
+
+  /* ─── WIDE CARD GRID ─── */
+  .card-wrap-wide {
+    grid-column: 1 / -1;
+  }
+
+  /* ─── INSTRUCTIONS ─── */
+  .instructions {
+    margin: 0 60px 60px;
+    padding: 20px 28px;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    background: #0d0d0d;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .instructions .icon { font-size: 20px; }
+  .instructions p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.5;
+  }
+  .instructions p strong { color: var(--white); }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div>
+    <h1>PIXEL <span>REBELS</span> — Marketing Cards</h1>
+  </div>
+  <p>// 6 cards · 1080×1080 · Right-click → Save image</p>
+</header>
+
+<div class="instructions">
+  <span class="icon">💡</span>
+  <p><strong>How to use:</strong> Right-click any card → "Save image as" to download, or use browser screenshot tools. Cards are designed at 1080×1080 (square) and 1920×1080 (wide) — perfect for Instagram, LinkedIn, and WhatsApp.</p>
+</div>
+
+<div class="gallery">
+
+  <!-- CARD 1: HERO BRAND -->
+  <div class="card-wrap">
+    <div class="card-label">Brand Card <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb"></div>
+      <div class="glow-orb2"></div>
+      <div class="side-tag">PIXEL REBELS · CREATIVE AGENCY</div>
+      <div class="content">
+        <div class="brand-mark">
+          <span></span><span></span>
+          <span></span><span></span>
+        </div>
+        <div class="headline">
+          WE BUILD<br>WEBSITES
+          <em>THAT CONVERT</em>
+        </div>
+        <p class="sub">Fast, high-performing websites for local and growing businesses. Agency quality — without the project guesswork.</p>
+        <div class="footer">
+          <span class="domain">pixelrebels.space</span>
+          <span class="cta-pill">Get a Free Quote →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: LAUNCH OFFER -->
+  <div class="card-wrap">
+    <div class="card-label">Launch Offer <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-offer">
+      <div class="noise-red"></div>
+      <div class="big-num">10</div>
+      <div class="content">
+        <div class="tag">Limited Time — First 10 Clients Only</div>
+        <div class="offer-headline">
+          <span class="num">20%</span>
+          LAUNCH<br>CREDIT
+        </div>
+        <div class="perks">
+          <div class="perk">20% launch credit for early clients</div>
+          <div class="perk">Brand starter asset included</div>
+          <div class="perk">6 months priority support</div>
+        </div>
+        <div class="footer">
+          <span class="footer-brand">PIXEL REBELS</span>
+          <span class="footer-url">pixelrebels.space</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: CUSTOM QUOTES -->
+  <div class="card-wrap">
+    <div class="card-label">Custom Quote Card <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-quotes">
+      <div class="content">
+        <div class="heading">
+          <div class="eyebrow">Tailored Quotes</div>
+          <h2>WEBSITES QUOTED AROUND YOUR GOALS</h2>
+        </div>
+        <div class="tiers">
+          <div class="tier">
+            <div class="tier-dot" style="background:#10B981"></div>
+            <div class="tier-info">
+              <div class="tier-name">Brand & Website</div>
+              <div class="tier-desc">3-page responsive website · Mobile-friendly · SEO basics</div>
+            </div>
+            <div class="tier-price">Discovery</div>
+          </div>
+          <div class="tier featured">
+            <div class="tier-badge">Most Popular</div>
+            <div class="tier-dot" style="background:#FF4D4D"></div>
+            <div class="tier-info">
+              <div class="tier-name">Local SEO & Enquiries</div>
+              <div class="tier-desc">5-page custom website · Modern UI/UX · SEO + Analytics</div>
+            </div>
+            <div class="tier-price">Strategy</div>
+          </div>
+          <div class="tier">
+            <div class="tier-dot" style="background:#8B5CF6"></div>
+            <div class="tier-info">
+              <div class="tier-name">Bespoke Creative</div>
+              <div class="tier-desc">10-page website · Full SEO · CMS + 3 months support</div>
+            </div>
+            <div class="tier-price">Bespoke</div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-text"><strong>Clear scope.</strong> Delivered in 5–14 days.</div>
+          <div class="footer-url">pixelrebels.space</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: TESTIMONIAL -->
+  <div class="card-wrap">
+    <div class="card-label">Testimonial Card <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-testimonial">
+      <div class="stripe"></div>
+      <div class="big-quote">"</div>
+      <div class="content">
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="quote-text">
+            "Pixel Rebels captured the warmth and character of our café perfectly. Since launching, we've seen a real uptick in online orders and new customers finding us through Google. Worth every penny."
+          </div>
+        </div>
+        <div>
+          <div class="author-block">
+            <div class="avatar">BH</div>
+            <div>
+              <div class="author-name">Owner, Brew House Café</div>
+              <div class="author-role">Verified Client · ★★★★★</div>
+            </div>
+          </div>
+          <div class="brand-footer">
+            <div class="brand-name">PIXEL <span>REBELS</span></div>
+            <div class="brand-url">pixelrebels.space</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5: SERVICES -->
+  <div class="card-wrap">
+    <div class="card-label">Services Card <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-services">
+      <div class="bg-text">DESIGN</div>
+      <div class="content">
+        <div class="top">
+          <div class="title-block">
+            <h2>WHAT WE<br><span>DO BEST</span></h2>
+            <p>Everything you need to compete online — under one roof.</p>
+          </div>
+          <div class="feature-count">
+            <div class="num">4</div>
+            <div class="label">Core Services</div>
+          </div>
+        </div>
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-icon">🎨</div>
+            <div>
+              <div class="service-name">Web Design</div>
+              <div class="service-desc">Custom, brand-aligned</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">⚡</div>
+            <div>
+              <div class="service-name">Web Development</div>
+              <div class="service-desc">Fast, responsive, clean code</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">🔍</div>
+            <div>
+              <div class="service-name">SEO Optimization</div>
+              <div class="service-desc">Rank higher, get found</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-icon">✏️</div>
+            <div>
+              <div class="service-name">Branding & Logo</div>
+              <div class="service-desc">Identities that stick</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gray-dim)">pixelrebels.space</span>
+          <span style="font-size:12px;color:var(--gray)">Delivered in <strong style="color:var(--white)">5–14 days</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 6: SECOND TESTIMONIAL -->
+  <div class="card-wrap">
+    <div class="card-label">Testimonial Card 2 <span class="card-size">1080 × 1080</span></div>
+    <div class="card card-testimonial" style="background:#080a08;">
+      <div class="stripe" style="background:linear-gradient(90deg,#10b981,#059669)"></div>
+      <div class="big-quote" style="color:rgba(16,185,129,0.04)">"</div>
+      <div class="content">
+        <div>
+          <div class="stars" style="color:#10b981">★★★★★</div>
+          <div class="quote-text">
+            "We needed a site that looked professional and made it easy for clients to see our past projects. Pixel Rebels nailed it — the enquiry form alone has brought in more leads than we ever got from word of mouth."
+          </div>
+        </div>
+        <div>
+          <div class="author-block">
+            <div class="avatar" style="background:linear-gradient(135deg,#10b981,#059669)">IC</div>
+            <div>
+              <div class="author-name">Owner, Ictinus Contractors</div>
+              <div class="author-role">Verified Client · ★★★★★</div>
+            </div>
+          </div>
+          <div class="brand-footer">
+            <div class="brand-name">PIXEL <span>REBELS</span></div>
+            <div class="brand-url">pixelrebels.space</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 7: PROCESS (WIDE) -->
+  <div class="card-wrap card-wrap-wide">
+    <div class="card-label">Process Card — Banner <span class="card-size">1920 × 1080 / LinkedIn Banner</span></div>
+    <div class="card card-wide card-process">
+      <div class="content">
+        <div class="header">
+          <h2>HOW WE <span>WORK</span></h2>
+          <div class="brand">PIXEL REBELS · pixelrebels.space</div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-title">Discovery Call</div>
+            <div class="step-desc">We learn about your business, goals, and vision</div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-title">Sitemap & Strategy</div>
+            <div class="step-desc">Detailed plan with content strategy and design direction</div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-title">Design & Build</div>
+            <div class="step-desc">Clean, optimized code — fast, SEO-friendly, responsive</div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-title">Review & Revise</div>
+            <div class="step-desc">Revisions until you love every pixel</div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div class="step-title">Launch 🚀</div>
+            <div class="step-desc">Go live with full handover and 30-day support</div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-cta">Ready to start? Email <strong>info@pixelrebels.space</strong></div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--gray-dim)">Delivered in 5–14 business days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DLDTVN0RF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7DLDTVN0RF');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Rebels – Business Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: #111118;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      padding: 60px 40px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #444;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    /* ── Card Shell ─────────────────────────────────────── */
+    .card {
+      width: 85mm;
+      height: 55mm;
+      border-radius: 3.5mm;
+      position: relative;
+      overflow: hidden;
+      background: #0a0a0d;
+      box-shadow:
+        0 0 0 0.3mm rgba(255,255,255,0.06),
+        0 20px 60px rgba(0,0,0,0.8),
+        0 4px 16px rgba(0,0,0,0.6);
+    }
+
+    /* ── Shared glow blobs ──────────────────────────────── */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ── Floating squares (brand motif) ─────────────────── */
+    .sq {
+      position: absolute;
+      border: 0.4mm solid rgba(255,255,255,0.12);
+      border-radius: 0.6mm;
+      pointer-events: none;
+    }
+
+    /* ── Dots (brand motif) ─────────────────────────────── */
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       FRONT CARD
+    ══════════════════════════════════════════════════════ */
+    .card-front {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6.5mm 7mm;
+    }
+
+    /* Glow blobs – front */
+    .front-blob-purple {
+      width: 40mm; height: 40mm;
+      top: -18mm; right: -12mm;
+      background: radial-gradient(circle, rgba(139,92,246,0.35) 0%, transparent 70%);
+    }
+    .front-blob-coral {
+      width: 28mm; height: 28mm;
+      bottom: -12mm; left: -6mm;
+      background: radial-gradient(circle, rgba(255,79,75,0.28) 0%, transparent 70%);
+    }
+    .front-blob-teal {
+      width: 20mm; height: 20mm;
+      bottom: 8mm; right: 20mm;
+      background: radial-gradient(circle, rgba(78,205,196,0.18) 0%, transparent 70%);
+    }
+
+    /* Geometric squares – front */
+    .front-sq1 { width: 6.5mm; height: 6.5mm; top: 12mm; right: 9mm; transform: rotate(18deg); }
+    .front-sq2 { width: 4mm;   height: 4mm;   top: 21mm; right: 16mm; transform: rotate(32deg); }
+    .front-sq3 { width: 5mm;   height: 5mm;   bottom: 8mm; right: 6mm; transform: rotate(12deg); opacity: 0.7; }
+
+    /* Dots – front */
+    .front-dot-red    { width: 2mm; height: 2mm; background: #FF4545; top: 7mm; left: 3mm; }
+    .front-dot-purple { width: 2mm; height: 2mm; background: #8B5CF6; top: 5mm; right: 4mm; }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-icon {
+      width: 8.5mm;
+      height: 8.5mm;
+      border-radius: 2mm;
+      background: linear-gradient(135deg, #FF6B9D 0%, #8B5CF6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 5mm;
+      color: #fff;
+      flex-shrink: 0;
+      letter-spacing: -0.2mm;
+    }
+
+    .logo-wordmark {
+      font-size: 4.2mm;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+    }
+    .logo-wordmark span {
+      background: linear-gradient(90deg, #FF6B9D, #8B5CF6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Company identity – front */
+    .front-identity {
+      position: relative;
+      z-index: 2;
+    }
+
+    .company-name {
+      font-size: 8mm;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.3mm;
+      background: linear-gradient(110deg, #ffffff 40%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .company-tagline {
+      font-size: 2.7mm;
+      font-weight: 400;
+      color: #666;
+      margin-top: 1.5mm;
+      letter-spacing: 0.15mm;
+    }
+
+    /* Gradient accent bar at bottom */
+    .front-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 0.6mm;
+      background: linear-gradient(90deg, #FF6B9D, #8B5CF6, #4ECDC4);
+      z-index: 3;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       BACK CARD
+    ══════════════════════════════════════════════════════ */
+    .card-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5.5mm 7mm 5.5mm 7mm;
+    }
+
+    /* Glow blobs – back */
+    .back-blob-teal {
+      width: 32mm; height: 32mm;
+      top: -14mm; left: -10mm;
+      background: radial-gradient(circle, rgba(78,205,196,0.22) 0%, transparent 70%);
+    }
+    .back-blob-purple {
+      width: 36mm; height: 36mm;
+      bottom: -16mm; right: -10mm;
+      background: radial-gradient(circle, rgba(139,92,246,0.28) 0%, transparent 70%);
+    }
+    .back-blob-coral {
+      width: 22mm; height: 22mm;
+      top: 10mm; right: 5mm;
+      background: radial-gradient(circle, rgba(255,79,75,0.15) 0%, transparent 70%);
+    }
+
+    /* Geometric squares – back */
+    .back-sq1 { width: 5mm;   height: 5mm;   top: 7mm; right: 8mm; transform: rotate(20deg); }
+    .back-sq2 { width: 7mm;   height: 7mm;   bottom: 7mm; left: 5mm; transform: rotate(10deg); }
+    .back-sq3 { width: 3.5mm; height: 3.5mm; bottom: 14mm; right: 5mm; transform: rotate(38deg); }
+
+    /* Dots – back */
+    .back-dot-green  { width: 2mm; height: 2mm; background: #4ECDC4; top: 4mm; left: 4mm; }
+    .back-dot-yellow { width: 2mm; height: 2mm; background: #F6C343; bottom: 5mm; right: 3mm; }
+
+    /* Contact items */
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.8mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 2.5mm;
+    }
+
+    .contact-icon {
+      width: 5mm;
+      height: 5mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 3.5mm;
+      height: 3.5mm;
+    }
+
+    .contact-text {
+      font-size: 2.8mm;
+      color: #bbb;
+      font-weight: 400;
+      letter-spacing: 0.05mm;
+    }
+
+    /* Description */
+    .back-description {
+      font-size: 2.6mm;
+      color: #999;
+      font-weight: 400;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 4mm;
+    }
+
+    .back-description strong {
+      color: #ddd;
+      font-weight: 600;
+    }
+
+    /* Divider */
+    .back-divider {
+      width: 100%;
+      height: 0.2mm;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      margin-bottom: 3.5mm;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Top gradient accent bar */
+    .back-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 0.6mm;
+      background: linear-gradient(90deg, #4ECDC4, #8B5CF6, #FF6B9D);
+      z-index: 3;
+    }
+
+    /* ── Print ──────────────────────────────────────────── */
+    @media print {
+      body {
+        background: #fff;
+        gap: 20mm;
+        padding: 15mm;
+      }
+      .section-label { color: #999; }
+      .card {
+        box-shadow:
+          0 0 0 0.3mm rgba(0,0,0,0.25),
+          0 1mm 3mm rgba(0,0,0,0.15);
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ FRONT ═══════════ -->
+  <div>
+    <div class="section-label">Front</div>
+    <div class="card card-front">
+
+      <!-- Glows -->
+      <div class="blob front-blob-purple"></div>
+      <div class="blob front-blob-coral"></div>
+      <div class="blob front-blob-teal"></div>
+
+      <!-- Floating squares -->
+      <div class="sq front-sq1"></div>
+      <div class="sq front-sq2"></div>
+      <div class="sq front-sq3"></div>
+
+      <!-- Dots -->
+      <div class="dot front-dot-red"></div>
+      <div class="dot front-dot-purple"></div>
+
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-icon">P</div>
+        <div class="logo-wordmark">Pixel<span>Rebels</span></div>
+      </div>
+
+      <!-- Identity -->
+      <div class="front-identity">
+        <div class="company-name">Pixel<br>Rebels</div>
+        <div class="company-tagline">Web Design for Small Business</div>
+      </div>
+
+      <!-- Bottom accent bar -->
+      <div class="front-bar"></div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ BACK ═══════════ -->
+  <div>
+    <div class="section-label">Back</div>
+    <div class="card card-back">
+
+      <!-- Glows -->
+      <div class="blob back-blob-teal"></div>
+      <div class="blob back-blob-purple"></div>
+      <div class="blob back-blob-coral"></div>
+
+      <!-- Floating squares -->
+      <div class="sq back-sq1"></div>
+      <div class="sq back-sq2"></div>
+      <div class="sq back-sq3"></div>
+
+      <!-- Dots -->
+      <div class="dot back-dot-green"></div>
+      <div class="dot back-dot-yellow"></div>
+
+      <!-- Top accent bar -->
+      <div class="back-bar"></div>
+
+      <!-- Description -->
+      <div class="back-description">
+        We build <strong>high-converting websites</strong> for small &amp; growing businesses —
+        delivered in <strong>10–14 days</strong>, without agency complexity or vague project scope.
+      </div>
+
+      <div class="back-divider"></div>
+
+      <!-- Contact – email + website only -->
+      <div class="contact-list">
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-text">info@pixelrebels.space</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="contact-text">pixelrebels.space</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
